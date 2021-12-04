@@ -33,7 +33,7 @@ function Chat({id, users}:ChatProps) {
         <S.Container onClick={enterChat}>
             {recipient ? (
 
-                <S.UserAvatar src={recipient.photoURL} />
+                <S.UserAvatar src={recipient.photoUrl} />
             ) : (
                 <S.UserAvatar> {recipientEmail![0].toUpperCase()} </S.UserAvatar>
             )}
