@@ -1,5 +1,6 @@
 {
   "name": "messager",
+  "author": "Rafael do carmo",
   "private": true,
   "scripts": {
     "dev": "next dev",
