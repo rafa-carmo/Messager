@@ -4,6 +4,8 @@ import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
+import NextNProgress from 'nextjs-progressbar'
+
 import { auth, db } from '../firebase'
 import Login from './login'
 import Loading from '../src/components/Loading'
@@ -30,7 +32,19 @@ function MyApp({ Component, pageProps }: AppProps) {
   
   if(loading) return <Loading />
   if(!user) return <Login />
-  return <Component {...pageProps} />
+
+  
+  return (
+    <>
+    <NextNProgress
+    color={'#57886C'}
+    startPosition={0.3}
+    stopDelayMs={200}
+    height={3}
+    />
+  <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp
