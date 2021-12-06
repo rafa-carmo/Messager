@@ -14,6 +14,7 @@
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@mui/material": "^5.2.2",
+    "audio-react-recorder": "^1.0.4",
     "better-react-spinkit": "^2.0.4",
     "dayjs": "^1.10.7",
     "email-validator": "^2.0.4",
@@ -24,6 +25,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-firebase-hooks": "^4.0.1",
+    "react-nextjs-record": "^0.0.7",
     "react-spinkit": "^3.0.0",
     "styled-components": "^5.3.3",
     "timeago-react": "^3.0.4"

@@ -2,27 +2,27 @@ import * as S from './styles'
 import { MessagesProps } from '../../../pages/chat/[id]';
 
 import { auth, db } from '../../../firebase';
-import { addDoc, collection, doc, getDoc, orderBy, query, serverTimestamp, setDoc, where } from 'firebase/firestore';
+import { addDoc, collection, doc, orderBy, query, serverTimestamp, setDoc, where } from 'firebase/firestore';
 
 import { useRouter } from 'next/dist/client/router';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import {  useRef, useState } from 'react';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import getRecipientEmail from '../../utils/getRecipientEmail';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 import Message from '../Message/index';
-import TimeAgo from 'timeago-react'
 
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { Avatar, IconButton } from '@material-ui/core';
 import { AttachFile, InsertEmoticon } from '@material-ui/icons';
-import MicIcon from '@material-ui/icons/Mic'
 import DoubleArrowTwoToneIcon from '@material-ui/icons/DoubleArrowTwoTone';
+
 
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import 'dayjs/locale/pt-br'
+import RecorderButton from '../RecorderButton';
 dayjs.extend(relativeTime)
 dayjs.locale('pt-br')
 
@@ -109,6 +109,7 @@ function ChatScreen({chat, messages}:MessagesProps) {
         })
     }
 
+    const stopRecord = () => {}
     return (
         <S.Container>
             <S.Header>
@@ -150,7 +151,7 @@ function ChatScreen({chat, messages}:MessagesProps) {
                 <InsertEmoticon />
                 <S.Input value={input} onChange={e => setInput(e.target.value)} />
                 <S.Button disabled={!input} type="submit" onClick={sendMessage}><DoubleArrowTwoToneIcon  /></S.Button>
-                <MicIcon />
+                <RecorderButton />
             </S.InputContainer>
         </S.Container>
     )

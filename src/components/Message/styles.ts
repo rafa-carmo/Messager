@@ -34,6 +34,7 @@ export const MessageElement = styled.p<MessageProps>`
 
         ${MessageModifier[typeOfMessage]};
     `}
+
 `
 
 export const Timestamp = styled.span`
@@ -44,4 +45,9 @@ export const Timestamp = styled.span`
     bottom: 0;
     text-align: right;
     right: 0;
+    
+`
+
+export const MessageContainer = styled.div`
+    min-width: 3rem;
 `

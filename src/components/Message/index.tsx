@@ -17,7 +17,7 @@ function Message({user, message, timestamp}: MessageProps) {
     return (
         <S.Container>
             <S.MessageElement typeOfMessage={user === userLogged?.email ? 'sender' : 'reciever'}>
-                <b>{message}</b>
+                <S.MessageContainer><b>{message}</b></S.MessageContainer>
                 <S.Timestamp>{timestamp ? moment(timestamp).format('LT') : '...'}</S.Timestamp>
             </S.MessageElement>
         </S.Container>
